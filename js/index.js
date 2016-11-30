@@ -96,8 +96,6 @@ $(function(){
                 },
                 'touchmove': function (event) {
                     moveTimes = new Date().getTime();
-                    console.log(moveType);
-                    console.log(moveTimes - startTimes);
                     if (moveType && moveTimes - startTimes > 100) {
                         move = event.targetTouches[0].pageX - start;
                         moveEnd = transWidth + move;
