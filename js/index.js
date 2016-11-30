@@ -91,10 +91,8 @@ $(function(){
             // 触摸事件
             $('.selectAllTypes').on({
                 'touchstart': function (event) {
-                    console.log(event)
                     start      = event.targetTouches[0].pageX;
                     startTimes = new Date().getTime();
-                    console.log(1);
                 },
                 'touchmove': function (event) {
                     moveTimes = new Date().getTime();
