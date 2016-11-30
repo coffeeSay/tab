@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+ul {list-style: none;}
+.hidden {
+    display: none;
+}
+.app-box {
+    width: 100%;
+}
+.categoryPicker {
+    border-bottom: 1px solid #dddddd;
+    padding: 0 10px;
+    background-color: #ffffff;
+    background-position: 97% center;
+    width: 100%;
+    box-sizing: border-box;
+    .cityPickerDown{
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        border: 10px solid transparent;
+        border-top: 10px solid #ccc;
+        -webkit-transition-duration: 300ms;
+        -moz-transition-duration: 300ms;
+        transition-duration: 300ms;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            right: -10px;
+            border: inherit;
+            border-top: inherit;
+            border-top-color: #ffffff;
+        }
+        &.allCategorySelected {
+            top: 6px;
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            transform: rotate(180deg);
+            border-top-color: red;
+        }
+    }
+    .allTypesWrap {
+        overflow: hidden;
+        width: 90%;
+        height: 40px;
+        margin-bottom: -2px;
+    }
+    .selectAllTypes {
+        width: 2000px;
+        white-space: nowrap;
+        li{
+            float: left;
+            height: 39px;
+            line-height: 40px;
+            display: inline-block;
+            padding: 0 10px;
+            box-sizing: border-box;
+            &.categorySelected {
+                border-bottom: 1px solid red;
+            }
+        }
+    }
+    .selectAllTypes::-webkit-scrollbar{
+        width: 0;
+    }
+    .dropdownCateList {
+        width: 90%;
+        min-height: 30px;
+        padding-top: 10px;
+        background-color: #fff;
+        border-bottom: 1px solid #dddddd;
+        position: absolute;
+        left: 5%;
+        top: 41px;
+        z-index: 2;
+        li {
+            width: 31%;
+            float: left;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+            margin-right: 2%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 10px;
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+            &.categorySelected {
+                border: 1px solid #fc3939;
+                color: #fc3939;
+            }
+        }
+    }
+}
+
