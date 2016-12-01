@@ -1,7 +1,5 @@
 $(function(){
-    var appendCurrent  = null;
     var cateIndex      = 0;
-    var cateId         = 0;
     var start          = 0;
     var move           = 0;
     var startTimes     = 0;
@@ -61,7 +59,6 @@ $(function(){
             $('body').on('click', '.selectAllTypes li, .dropdownCateList li', function(){
                 var $this = $(this);
                 cateIndex = $this.index();
-                cateId    = $this.data('cate-id');
 
                 selectTypesLi.eq(cateIndex).addClass('categorySelected').siblings('li').removeClass('categorySelected');
                 dropdownListLi.eq(cateIndex).addClass('categorySelected').siblings('li').removeClass('categorySelected');
