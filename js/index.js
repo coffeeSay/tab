@@ -91,13 +91,13 @@ $(function(){
             // 触摸事件
             $('.selectAllTypes').on({
                 'touchstart': function (event) {
-                    start      = event.targetTouches[0].pageX;
+                    start      = event.originalEvent.targetTouches[0].pageX;
                     startTimes = new Date().getTime();
                 },
                 'touchmove': function (event) {
                     moveTimes = new Date().getTime();
                     if (moveType && moveTimes - startTimes > 100) {
-                        move = event.targetTouches[0].pageX - start;
+                        move = event.originalEvent.targetTouches[0].pageX - start;
                         moveEnd = transWidth + move;
                         selectTypes.css({
                             'transition-duration':' 0ms',
@@ -114,7 +114,7 @@ $(function(){
                                 'transition-duration': '300ms',
                                 'transform': 'translate3d(' + -moveMax + 'px, 0, 0)'
                             });
-                            transWidth = -allwrapWidth;
+                            transWidth = -moveMax;
                         } else if (transWidth > 0) {
                             transWidth = 0;
                             selectTypes.css({
