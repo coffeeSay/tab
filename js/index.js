@@ -116,7 +116,7 @@ $(function(){
                                 'transition-duration': '300ms',
                                 'transform': 'translate3d(' + -moveMax + 'px, 0, 0)'
                             });
-                            transWidth = -allwrapWidth;
+                            transWidth = -moveMax;
                         } else if (transWidth > 0) {
                             transWidth = 0;
                             selectTypes.css({
